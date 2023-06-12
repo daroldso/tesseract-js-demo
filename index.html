@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Recognizer</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1.0"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1>Number Detection</h1>
+
+    <section id="demos">
+      <div id="liveView">
+        <button id="webcamButton" class="invisible">Loading...</button>
+        <canvas id="canvasBg"></canvas>
+        <canvas id="canvas"></canvas>
+        <video
+          id="webcam"
+          class="background"
+          playsinline
+          crossorigin="anonymous"
+        ></video>
+      </div>
+    </section>
+
+    <!-- Import Tesseract.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.1/dist/tesseract.min.js"></script>
+
+    <!-- Import webworker code -->
+    <script src="ocr.js"></script>
+
+    <!-- Import rectangle point code -->
+    <script src="script.js"></script>
+  </body>
+</html>

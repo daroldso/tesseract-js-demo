@@ -1,0 +1,145 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background: black;
+}
+
+h1 {
+    opacity: 0;
+}
+
+video {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+}
+
+#canvas,
+#canvasBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+/*    width: 500px;*/
+    height: 700px;
+    width: 100vw;
+/*    height: 100vh;*/
+    cursor: pointer;
+}
+
+#canvasBg {
+    opacity: 0.6;
+}
+
+button {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px 30px;
+    background-color: #0060df;
+    border: solid 1px #0060df;
+    color: #fff;
+    pointer-events: all;
+    transition: 0.2s ease;
+    position: absolute;
+    top: 400px;
+    left: 20px;
+    position: fixed;
+    z-index: 1000;
+}
+
+.removed {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.invisible {
+    border: 1px solid #b1b1b3;
+    background: white;
+    color: #000;
+    cursor: default;
+    pointer-events: none;
+}
+
+.camView {
+    cursor: pointer;
+}
+
+.highlighter p {
+    padding: 5px;
+    z-index: 2;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    position: absolute;
+    place-content: center;
+    margin: 0;
+    width: inherit;
+    height: inherit;
+    display: grid;
+}
+
+.highlighter {
+    border: 2px solid #0b9e43;
+    box-shadow: 0 0 50px 0 #0b9e43;
+    z-index: 1;
+    position: fixed;
+    display: grid;
+    place-content: center;
+    animation: 0.2s in, 5s 0.2s fade forwards;
+    pointer-events: none;
+    border-radius: 3px;
+}
+
+.highlighter_static {
+    border: 2px solid white;
+    box-shadow: 0 0 50px 0 white;
+    z-index: 1;
+    position: fixed;
+    display: grid;
+    place-content: center;
+/*    animation: pop 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);*/
+    pointer-events: none;
+    transform-origin: center;
+    border-radius: 3px;
+}
+
+@keyframes in {
+    from {
+        border-color: white;
+        box-shadow: 0 0 50px 0 white;
+    }
+}
+
+.highlighter_s {
+    border: 2px solid white;
+    box-shadow: 0 0 50px 0 white;
+    z-index: 1;
+    position: fixed;
+    display: grid;
+    place-content: center;
+    animation: pop 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    pointer-events: none;
+    transform-origin: center;
+    border-radius: 3px;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0);
+        border-color: transparent;
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}
+
+.background {
+    width: 100%;
+    position: fixed;
+    z-index: -1000;
+    left: 0;
+    top: 0;
+    background: black;
+}
