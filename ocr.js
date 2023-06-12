@@ -27,7 +27,7 @@ async function Init() {
   // SPARSE_TEXT: '11',
   // SPARSE_TEXT_OSD: '12',
   // RAW_LINE: '13',
-  await worker.setParameters({ tessedit_pageseg_mode: "13" });
+  await worker.setParameters({ tessedit_pageseg_mode: "7" });
 
   //Enable start button:
   enableWebcamButton.classList.remove("invisible");
